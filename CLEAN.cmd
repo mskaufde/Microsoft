@@ -34,6 +34,6 @@ Reg.exe add "HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral" /v "aActiveUITheme"
 Reg.exe add "HKCU\Software\Adobe\Adobe Acrobat\DC\AVGeneral" /v "bappFirstLaunchForNotifications" /t REG_DWORD /d "0" /f
 Reg.exe add "HKCU\Software\Adobe\Adobe Acrobat\DC\FTEDialog" /v "iFTEVersion" /t REG_DWORD /d "10" /f
 Reg.exe add "HKCU\Software\Adobe\Adobe Acrobat\DC\FTEDialog" /v "iLastCardShown" /t REG_DWORD /d "0" /f
-echo 0.0.0.0 ic.adobe.io 0.0.0.0 r3zj0yju1q.adobe.io 0.0.0.0 cd536oo20y.adobe.io 0.0.0.0 3ca52znvmj.adobe.io 0.0.0.0 5zgzzv92gn.adobe.io 0.0.0.0 r5hacgq5w6.adobe.io 0.0.0.0 ffs3xik41x.adobestats.io 0.0.0.0 8ncdzpmmrg.adobe.io >> C:\Windows\System32\drivers\etc\hosts
+echo 0.0.0.0 ic.adobe.io 0.0.0.0 r3zj0yju1q.adobe.io 0.0.0.0 >> C:\Windows\System32\drivers\etc\hosts
 netsh advfirewall firewall add rule name="Block Outbound TrafficAD" dir=out action=block program="C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
 netsh advfirewall firewall add rule name="Block Outbound TrafficAGS" dir=out action=block program="C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient\AGSService.exe"
