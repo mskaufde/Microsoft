@@ -39,3 +39,6 @@ curl https://raw.githubusercontent.com/ignaciocastro/adobe-is-dumb/main/list.txt
 
 netsh advfirewall firewall add rule name="Block Outbound TrafficAD" dir=out action=block program="C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
 netsh advfirewall firewall add rule name="Block Outbound TrafficAGS" dir=out action=block program="C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient\AGSService.exe"
+netsh advfirewall firewall add rule name="Block Specific Software Inbound" dir=in action=block program="C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe" enable=yes
+netsh advfirewall firewall add rule name="Block Specific Software Inbound" dir=in action=block program="C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient\AGSService.exe" enable=yes
+
