@@ -41,4 +41,6 @@ netsh advfirewall firewall add rule name="Block Outbound TrafficAD" dir=out acti
 netsh advfirewall firewall add rule name="Block Outbound TrafficAGS" dir=out action=block program="C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient\AGSService.exe"
 netsh advfirewall firewall add rule name="Block Specific Software Inbound" dir=in action=block program="C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe" enable=yes
 netsh advfirewall firewall add rule name="Block Specific Software Inbound" dir=in action=block program="C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient\AGSService.exe" enable=yes
+forfiles /p "C:\Program Files\Adobe\Acrobat DC\Acrobat" /s /m *.exe /c "netsh advfirewall firewall add rule name='Block_Outbound_%~nxf' dir=out action=block program='%~f0'"
+forfiles /p "C:\Program Files\Adobe\Acrobat DC\Acrobat" /s /m *.exe /c "netsh advfirewall firewall add rule name='Block_Inbound_%~nxf' dir=in action=block program='%~f0'"
 
