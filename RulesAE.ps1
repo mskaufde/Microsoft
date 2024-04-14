@@ -6,7 +6,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Exit
 }
 
-$folderPath = ""C:\Program Files\Adobe\Adobe After Effects 2023"
+$folderPath = "C:\Program Files\Adobe\Adobe After Effects 2023"
 
 # Create outbound rules for executables in the folder
 Get-ChildItem -Path $folderPath -Filter *.exe -Recurse | ForEach-Object {
