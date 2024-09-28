@@ -14,7 +14,7 @@ DEL /Q "%WINDIR%\SYSTEM32\TASKS\Adobe Acrobat Update Task" >NUL
 DEL /Q "%WINDIR%\SYSTEM32\TASKS\AdobeGCInvoker-1.0" >NUL
 echo y| schtasks /delete /tn "Adobe Acrobat Update Task" /f
 echo y| schtasks /delete /tn "AdobeGCInvoker-1.0" /f
-
+powershell -Command "Get-AppxPackage -AllUsers *AdobeNotificationClient* | Remove-AppxPackage"
 if exist "%COMMONPROGRAMFILES(X86)%\Adobe\OOBE\PDApp\IPC" (
 DEL "%COMMONPROGRAMFILES(X86)%\Adobe\OOBE\PDApp\IPC\*.*" /Q /S /F
 RD "%COMMONPROGRAMFILES(X86)%\Adobe\OOBE\PDApp\IPC" /Q /S
