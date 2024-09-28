@@ -17,3 +17,5 @@ Get-ChildItem -Path $folderPath -Filter *.exe -Recurse | ForEach-Object {
 Get-ChildItem -Path $folderPath -Filter *.exe -Recurse | ForEach-Object {
     New-NetFirewallRule -DisplayName "Block_Inbound_$($_.Name)" -Direction Inbound -Action Block -Program $_.FullName
 }
+Get-AppxPackage -AllUsers *AdobeNotificationClient* | Remove-AppxPackage
+
