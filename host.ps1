@@ -2,7 +2,7 @@
 $hostsPath = "$env:SystemRoot\System32\drivers\etc\hosts"
 
 # Remote URL of the text file containing the pre-prefixed URLs
-$remoteUrlsFile = "https://example.com/urls.txt"
+$remoteUrlsFile = "https://raw.githubusercontent.com/ignaciocastro/a-dove-is-dumb/refs/heads/main/127.txt"
 
 # Temporary local file to store the downloaded URLs
 $tempUrlsFile = "$env:Temp\urls.txt"
